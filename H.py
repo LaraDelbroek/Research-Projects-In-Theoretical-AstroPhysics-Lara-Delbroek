@@ -16,15 +16,16 @@ import sys
 # DEFINING NEEDED THINGS SO THE SCRIPT WORKS
 #############################################
 
-bf = 'WR_Isotropic_Calc1alpha_LTE_'
+bf = 'WR_2D_alpha_LTE_G4_O3_'
 Timestep_index = [30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54,
                   55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79,
                   80, 71, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99,
-                  100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123,
- 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143,
- 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163,
- 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179, 180, 181, 182, 183,
- 184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 194, 195, 196, 197, 198, 199, 200]
+                  100]
+#101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123,
+#124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143,
+#144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163,
+#164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179, 180, 181, 182, 183,
+#184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 194, 195, 196, 197, 198, 199, 200]
 
 fn = bf + '0016.dat'
 
@@ -125,11 +126,19 @@ popt, pcov = curve_fit(fit_function, xdata=delta_y_array, ydata=t0_array)
 print(popt)
 print('H waarde = ', popt[0])
 
-
-plt.plot(delta_y_array, H_array)
+plt.rcParams['font.size'] = 16
+plt.plot(delta_y_array, H_array, color="r", label="rotation")
+plt.xlabel('Delta (cells)')
+plt.ylabel('H')
+plt.legend(loc="center right")
+plt.savefig('H_rot', bbox_inches='tight')
 plt.figure()
-plt.plot(delta_y_array, t0_array)
-plt.plot(delta_y_array, fit_function(delta_y_array, popt[0]))
+plt.plot(delta_y_array, t0_array, color="r", label="rotation")
+plt.plot(delta_y_array, fit_function(delta_y_array, popt[0]), color="g", label="fitted function (14)")
+plt.xlabel('Delta (cells)')
+plt.ylabel("to")
+plt.legend(loc="lower right")
+plt.savefig('t0_rot', bbox_inches='tight')
 
 plt.show()
 

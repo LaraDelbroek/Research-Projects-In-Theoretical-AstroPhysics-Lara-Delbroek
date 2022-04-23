@@ -87,11 +87,16 @@ print(Jump)
 plt.plot(x_as, fc_delta_y)
 plt.axvline(x = x_as[Center + Jump])
 plt.axvline(x = x_as[Center - Jump])
-plt.savefig('fc_isotropic.png')
+plt.xlabel('Delta')
+plt.ylabel('fc')
+plt.savefig('fc_rot.png')
+plt.figure()
 plt.show()
 
-np.savetxt("x_as_under_2_5.txt", x_as, delimiter=",")
-np.savetxt("fc_delta_y_under_2_2.txt", fc_delta_y, delimiter=",")
+
+
+np.savetxt("x_as_under_2_5_rot.txt", x_as, delimiter=",")
+np.savetxt("fc_delta_y_under_2_5_rot.txt", fc_delta_y, delimiter=",")
 
 
 

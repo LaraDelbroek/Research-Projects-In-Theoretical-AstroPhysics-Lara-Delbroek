@@ -296,47 +296,53 @@ Height_flattened_per50_rot =  []
 for height in range(0, len(x) - 49, 50):
     Height_flattened_per50_rot.append(x[height])
 
-
-plt.plot(Height, f_cl)
-plt.plot(Height_rot, f_cl_rot)  # PLOTTING AVERAGED RESULTS
+plt.rcParams['font.size'] = 12
+plt.plot(Height, f_cl, label ="No rotation")
+plt.plot(Height_rot, f_cl_rot, label ="Rotation")  # PLOTTING AVERAGED RESULTS
 plt.xlabel('Height (Rc)')
 plt.ylabel('clumping factor')
-plt.title('Clumping factor rotation vs no rotation')
-plt.savefig('Clumping11')
+plt.title('Clumping factor')
+plt.legend(loc="upper right")
+plt.savefig('Clumping11', bbox_inches='tight')
 plt.figure()
-plt.plot(Height_flattened_per5, fcl_flattened_per5)              # PLOTTING AVERAGED RESULTS
-plt.plot(Height_flattened_per5_rot, fcl_flattened_per5_rot)
+plt.plot(Height_flattened_per5, fcl_flattened_per5, label ="No rotation")              # PLOTTING AVERAGED RESULTS
+plt.plot(Height_flattened_per5_rot, fcl_flattened_per5_rot, label ="Rotation")
 plt.xlabel('Height (Rc)')
 plt.ylabel('clumping factor')
-plt.title('Clumping factor rotation vs no rotation flattened per 5 cells')
-plt.savefig('Clumping22')
+plt.title('Clumping factor flattened per 5 cells')
+plt.legend(loc="upper right")
+plt.savefig('Clumping22', bbox_inches='tight')
 plt.figure()
-plt.plot(Height_flattened_per10, fcl_flattened_per10)
-plt.plot(Height_flattened_per10_rot, fcl_flattened_per10_rot)  # PLOTTING AVERAGED RESULTS
+plt.plot(Height_flattened_per10, fcl_flattened_per10, label ="No rotation")
+plt.plot(Height_flattened_per10_rot, fcl_flattened_per10_rot, label ="Rotation")  # PLOTTING AVERAGED RESULTS
 plt.xlabel('Height (Rc)')
 plt.ylabel('clumping factor')
-plt.title('Clumping factor rotation vs no rotation flattened per 10 cells')
-plt.savefig('Clumping33')
+plt.title('Clumping factor flattened per 10 cells')
+plt.legend(loc="upper right")
+plt.savefig('Clumping33', bbox_inches='tight')
 plt.figure()
-plt.plot(Height_flattened_per15, fcl_flattened_per15)
-plt.plot(Height_flattened_per15_rot, fcl_flattened_per15_rot)  # PLOTTING AVERAGED RESULTS
+plt.plot(Height_flattened_per15, fcl_flattened_per15, label ="No rotation")
+plt.plot(Height_flattened_per15_rot, fcl_flattened_per15_rot, label ="Rotation")  # PLOTTING AVERAGED RESULTS
 plt.xlabel('Height (Rc)')
 plt.ylabel('clumping factor')
-plt.title('Clumping factor rotation vs no rotation flattened per 15 cells')
-plt.savefig('Clumping44')
+plt.title('Clumping factor flattened per 15 cells')
+plt.legend(loc="upper right")
+plt.savefig('Clumping44', bbox_inches='tight')
 plt.figure()
-plt.plot(Height_flattened_per20, fcl_flattened_per20)
-plt.plot(Height_flattened_per20_rot, fcl_flattened_per20_rot) # PLOTTING AVERAGED RESULTS
+plt.plot(Height_flattened_per20, fcl_flattened_per20, label ="No rotation")
+plt.plot(Height_flattened_per20_rot, fcl_flattened_per20_rot, label ="Rotation") # PLOTTING AVERAGED RESULTS
 plt.xlabel('Height (Rc)')
 plt.ylabel('clumping factor')
-plt.title('Clumping factor rotation vs no rotation flattened per 20 cells')
-plt.savefig('Clumping55')
+plt.title('Clumping factor flattened per 20 cells')
+plt.legend(loc="upper right")
+plt.savefig('Clumping55', bbox_inches='tight')
 plt.figure()
-plt.plot(Height_flattened_per50, fcl_flattened_per50)
-plt.plot(Height_flattened_per50_rot, fcl_flattened_per50_rot) # PLOTTING AVERAGED RESULTS
+plt.plot(Height_flattened_per50, fcl_flattened_per50, label ="No rotation")
+plt.plot(Height_flattened_per50_rot, fcl_flattened_per50_rot, label ="Rotation") # PLOTTING AVERAGED RESULTS
 plt.xlabel('Height (Rc)')
 plt.ylabel('clumping factor')
-plt.title('Clumping factor rotation vs no rotation flattened per 50 cells')
-plt.savefig('Clumping66')
+plt.title('Clumping factor flattened per 50 cells')
+plt.legend(loc="upper right")
+plt.savefig('Clumping66', bbox_inches='tight')
 plt.show()
 
